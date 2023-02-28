@@ -1,12 +1,16 @@
-import React from 'react';
+import React,  { useState }  from 'react';
 import '../App.css';
 import 'rsuite/dist/rsuite.min.css'
 import { Grid, Row, Col } from 'rsuite';
 import { Form, ButtonToolbar, Button} from 'rsuite';
+import { useSearch } from 'rsuite/esm/Picker';
 function Login() {
+  const [value1, setVale1] = useState(true);
+  const [value2, setVale2] = useState(false);
+
   return (
     <>
-     <Grid fluid>
+     {/* <Grid fluid>
     <Row className="show-grid">
       <Col xsHidden xs={12}>
         <div className='background-img'></div>
@@ -34,7 +38,10 @@ function Login() {
   </Form>
       </Col>
     </Row>
-  </Grid>
+  </Grid> */}
+  <button type='button' onClick={() => setVale1(value1)} style={{margin: "20px"}}>abc</button>
+  <button type='button' onClick={() => setVale2(value2)}>xyz</button>
+  <p>Value One: {value1 ? true && <h1>abc</h1> : value2 ? true && <h1>xyz</h1> : true}</p>
    
     </>
   );

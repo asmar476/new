@@ -10,6 +10,7 @@ export function Fetch() {
       .then(data => {
         setUsers(data)
       })
+      
   }
   useEffect(() => {
     fetchData();
@@ -41,6 +42,7 @@ export function Fetch() {
 
         </tbody>
       </table>
+ 
       </>
   );
 }
