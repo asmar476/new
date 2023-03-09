@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import Login from './component/Login';
+import ContextExample from './component/ContextExample';
+import ChildComponent from './component/ChildComponent';
 function App() {
-  const [value, setValue] = useState("");
-  const handleClick = (event) => {
-    setValue("abc")
-  }
+  const appData = { name: 'My App', version: '1.0.0' };
   return (
     <div className="App">
       {/* <Login /> */}
-      <input type="text" className="abc" defaultValue="value" />
-      <button type="button" style={{backgroundColor: "red", border: "none", width: "30px", height: "20px", position: "fixed", marginLeft: "40px"}} onClick={handleClick}>{value}</button>
-      <button type="button" style={{backgroundColor: "red", border: "none", width: "30px", height: "20px", position: "fixed", marginLeft: "80px"}} onClick={handleClick}>{value}</button>
-      <button type="button" style={{backgroundColor: "red", border: "none", width: "30px", height: "20px", position: "fixed", marginLeft: "120px"}} onClick={handleClick}>{value}</button>
+      <ContextExample.Provider value={appData}>
+      <div>
+        <h1>{appData.name}</h1>
+        <ChildComponent />
+      </div>
+    </ContextExample.Provider>
     </div>
   );
 }
-
 export default App;
